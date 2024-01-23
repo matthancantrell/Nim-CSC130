@@ -5,20 +5,41 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NIM_CSC130"
         mc:Ignorable="d"
-        Title="MainWindow" Height="550" Width="800" Background="Black">
+        Title="MainWindow" Height="550" Width="800" Background="DarkCyan">
     <Grid>
         <StackPanel Margin="150,164,150,83">
-            <TextBlock FontSize="35" TextAlignment="Center" FontFamily="Showcard Gothic" Foreground="White"><Run Text="Game of Nim"/></TextBlock>
-            <Button x:Name="StartPlayerButton1" Height="45" Width="300" Margin="20" Content="Let me start" FontSize="20" FontFamily="Showcard Gothic" Click="SwitchWindow" Foreground="#FF00FC0A" Background="White">
+            <TextBlock FontSize="35" 
+                       TextAlignment="Center"
+                       FontFamily="Rockwell" 
+                       Foreground="White">Game of Nim</TextBlock>
+            <Button x:Name="StartPlayerButton" 
+                    Height="60" 
+                    Width="325" 
+                    Margin="20" 
+                    Content="Let me start" 
+                    FontSize="25" 
+                    FontFamily="Rockwell"
+                    Background="LightBlue"
+                    BorderBrush="Black"
+                    BorderThickness="3">
                 <Button.Resources>
-                    <Style TargetType="{x:Type Border}">
-                        <Setter Property="CornerRadius" Value="8"/>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" 
+                                Value="8"/>
                     </Style>
                 </Button.Resources>
             </Button>
-            <Button x:Name="StartComputerButton1" Height="45" Width="300" Content="Let Computer start" FontSize="20" FontFamily="Showcard Gothic" Click="SwitchWindow" Foreground="#FF1500FF" Background="White">
+            <Button x:Name="StartComputerButton"
+                    Height="60" 
+                    Width="325" 
+                    Content="Let Player 2 Start"
+                    FontSize="25" 
+                    FontFamily="Rockwell"
+                    Background="LightBlue"
+                    BorderBrush="Black"
+                    BorderThickness="3">
                 <Button.Resources>
-                    <Style TargetType="{x:Type Border}">
+                    <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="8"/>
                     </Style>
                 </Button.Resources>
@@ -26,6 +47,3 @@
         </StackPanel>
     </Grid>
 </Window>
-    
-
-        

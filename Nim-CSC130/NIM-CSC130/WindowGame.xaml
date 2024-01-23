@@ -5,12 +5,40 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NIM_CSC130"
         mc:Ignorable="d"
-        Title="WindowGame" Height="450" Width="800" Background="#FF070707">
+        Title="WindowGame" Height="450" Width="800" Background="DarkCyan">
     <Grid>
         <StackPanel Margin="400,70,10,50">
-            <TextBlock x:Name="txt_TurnDisplay" TextWrapping="Wrap" Text="Player turn: " FontFamily="Showcard Gothic" Height="143" Width="246" FontSize="36" FontWeight="Bold" TextAlignment="Center" Foreground="White"/>
-            <Button x:Name="btn_EndTurn" Content="End Turn" Height="54" Width="112" Background="#FFFCFCFC" BorderBrush="Black" FontFamily="Showcard Gothic" FontSize="15" Click="OnEndTurn"/>
-            <TextBlock x:Name="txt_WinnerDisplay" TextWrapping="Wrap" Text="Winner: " Height="72" Width="246" FontFamily="Showcard Gothic" FontSize="20" TextAlignment="Center" Foreground="#FF18D000"/>
+            <TextBlock x:Name="txt_TurnDisplay" 
+                       TextWrapping="Wrap" 
+                       Text="Player turn: " 
+                       FontFamily="Rockwell" Height="143" Width="246" FontSize="35"
+                       TextAlignment="Center"
+                       Foreground="White"/>
+            <Button x:Name="btn_EndTurn" 
+                    Content="End Turn" 
+                    Height="55"
+                    Width="140"
+                    Background="LightBlue"
+                    BorderBrush="Black" 
+                    BorderThickness="3"
+                    FontFamily="Rockwell" 
+                    FontSize="20" Click="OnEndTurn">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="8"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+                    
+            <TextBlock x:Name="txt_WinnerDisplay" 
+                       TextWrapping="Wrap" 
+                       Text="Winner: " 
+                       Height="72" 
+                       Width="246" 
+                       FontFamily="Rockwell" 
+                       FontSize="25" 
+                       TextAlignment="Center" 
+                       Foreground="DarkSeaGreen"/>
         </StackPanel>
     </Grid>
 </Window>
