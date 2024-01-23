@@ -1,0 +1,16 @@
+﻿<Window x:Class="NIM_CSC130.WindowGame"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NIM_CSC130"
+        mc:Ignorable="d"
+        Title="WindowGame" Height="450" Width="800" Background="#FF070707">
+    <Grid>
+        <StackPanel Margin="400,70,10,50">
+            <TextBlock x:Name="txt_TurnDisplay" TextWrapping="Wrap" Text="Player turn: " FontFamily="Showcard Gothic" Height="143" Width="246" FontSize="36" FontWeight="Bold" TextAlignment="Center" Foreground="White"/>
+            <Button x:Name="btn_EndTurn" Content="End Turn" Height="54" Width="112" Background="#FFFCFCFC" BorderBrush="Black" FontFamily="Showcard Gothic" FontSize="15" Click="OnEndTurn"/>
+            <TextBlock x:Name="txt_WinnerDisplay" TextWrapping="Wrap" Text="Winner: " Height="72" Width="246" FontFamily="Showcard Gothic" FontSize="20" TextAlignment="Center" Foreground="#FF18D000"/>
+        </StackPanel>
+    </Grid>
+</Window>

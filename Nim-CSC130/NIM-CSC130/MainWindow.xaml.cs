@@ -20,5 +20,12 @@ namespace NIM_CSC130
         {
             InitializeComponent();
         }
+
+        private void SwitchWindow(object sender, RoutedEventArgs e)
+        {
+            WindowGame gameWindow = new WindowGame();
+            Visibility = Visibility.Hidden;
+            gameWindow.Show();
+        }
     }
 }
