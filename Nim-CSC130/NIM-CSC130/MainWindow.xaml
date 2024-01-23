@@ -5,8 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NIM_CSC130"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="550" Width="800">
     <Grid>
-
+        <StackPanel Margin="150,164,150,83">
+        <TextBlock FontSize="35" TextAlignment="Center" FontFamily="verdana">Game of Nim</TextBlock>
+            <Button x:Name="StartPlayerButton" Height="45" Width="300" Margin="20" Content="Let me start" FontSize="20" FontFamily="Verdana">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="8"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button x:Name="StartComputerButton" Height="45" Width="300" Content="Let Computer start" FontSize="20" FontFamily="Verdana">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="8"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </StackPanel>
     </Grid>
 </Window>
