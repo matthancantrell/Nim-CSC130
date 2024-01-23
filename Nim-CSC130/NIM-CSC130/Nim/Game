@@ -1,0 +1,26 @@
+public class NimGame
+{
+    private StickPile stickPile;
+    private Player currentPlayer;
+
+    public NimGame(int initialSticks, string player1Name, string player2Name)
+    {
+        stickPile = new StickPile(initialSticks);
+        Player player1 = new Player(player1Name);
+        Player player2 = new Player(player2Name);
+        currentPlayer = player1;
+    }
+
+    public bool IsGameOver()
+    {
+        return stickPile.IsEmpty();
+    }
+
+    public void PlayTurn()
+    {
+        int sticksToTake = currentPlayer.TakeSticks();
+        stickPile.RemoveSticks(sticksToTake);
+
+        currentPlayer = (currentPlayer == player1) ? player2 : player1;
+    }
+}
