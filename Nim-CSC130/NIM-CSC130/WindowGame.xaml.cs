@@ -19,8 +19,11 @@ namespace NIM_CSC130
     /// </summary>
     public partial class WindowGame : Window
     {
-        private bool isPlayer = false;
-       
+        private bool isPlayerTurn;
+        public bool endGame = true; // Player1 == true, Player2 == false
+
+        public bool IsPlayerTurn { get; internal set; }
+
         public WindowGame()
         {
             InitializeComponent();
@@ -28,24 +31,41 @@ namespace NIM_CSC130
 
         ///<summary>
         /// Interaction logic for the player turn
-        /// Uses boolean and when button is activated it switches true or false for non computer player
+        /// Uses boolean and when button is activated it switches true or false for other player
         ///</summary>
         private void PlayerTurn()
         {
-            if (isPlayer == true)
+            if (isPlayerTurn)
             {
-                txt_TurnDisplay.Text = "Player turn: Player";
+                txt_TurnDisplay.Text = "Player 1 Turn";
             }
-            else
+            else if (!isPlayerTurn)
             {
-                txt_TurnDisplay.Text = "Player Turn: AI";
+                txt_TurnDisplay.Text = "Player 2 Turn";
             }
+
         }
 
-        void OnEndTurn (object sender, EventArgs e)
+        void OnEndTurn(object sender, EventArgs e)
         {
-            isPlayer = true;
-            
+            //while (endGame != false)
+            {
+                switch (isPlayerTurn)
+                {
+                    case true:
+                        PlayerTurn();
+                        isPlayerTurn = false;
+                        break;
+                    case false:
+                        PlayerTurn();
+                        isPlayerTurn = true;
+                        break;
+
+                }
+
+            }
+
+
         }
     }
 }

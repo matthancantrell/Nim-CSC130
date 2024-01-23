@@ -10,7 +10,7 @@
         <StackPanel Margin="400,70,10,50">
             <TextBlock x:Name="txt_TurnDisplay" 
                        TextWrapping="Wrap" 
-                       Text="Player turn: " 
+                       Text="" 
                        FontFamily="Rockwell" Height="143" Width="246" FontSize="35"
                        TextAlignment="Center"
                        Foreground="White"/>
