@@ -11,26 +11,25 @@
             <TextBlock x:Name="txt_TurnDisplay" 
                        TextWrapping="Wrap" 
                        Text="Player turn: " 
-                       FontFamily="Rockwell" Height="112" Width="246" FontSize="35"
+                       FontFamily="Rockwell" Height="143" Width="246" FontSize="35"
                        TextAlignment="Center"
                        Foreground="White"/>
             <Button x:Name="btn_EndTurn" 
                     Content="End Turn" 
                     Height="55"
                     Width="140"
-                    Margin="5"
                     Background="LightBlue"
                     BorderBrush="Black" 
                     BorderThickness="3"
                     FontFamily="Rockwell" 
-                    FontSize="20" 
-                    Click="OnEndTurn">
+                    FontSize="20" Click="OnEndTurn">
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="8"/>
                     </Style>
                 </Button.Resources>
             </Button>
+                    
             <TextBlock x:Name="txt_WinnerDisplay" 
                        TextWrapping="Wrap" 
                        Text="Winner: " 
@@ -41,39 +40,5 @@
                        TextAlignment="Center" 
                        Foreground="MediumSeaGreen"/>
         </StackPanel>
-        <Button
-                Margin="234,18,552,340"/>
-        <Button
-                Margin="234,115,552,242"/>
-        <Button
-                Margin="195,115,591,242"/>
-        <Button
-                Margin="271,115,515,242"/>
-        <Button
-            Margin="234,212,552,146"/>
-        <Button
-            Margin="195,212,591,146"/>
-        <Button
-            Margin="271,212,515,146"/>
-        <Button
-            Margin="159,212,627,146"/>
-        <Button
-            Margin="310,212,476,146"/>
-        <Button
-            Margin="234,308,552,50"/>
-        <Button
-            Margin="195,308,591,50"/>
-        <Button
-            Margin="271,308,515,50"/>
-        <Button
-            Margin="159,308,627,50"/>
-        <Button
-            Margin="310,308,476,50"/>
-        <Button
-            Margin="120,308,666,50"/>
-        <Button
-            Margin="120,308,666,50"/>
-        <Button
-            Margin="346,308,440,50"/>
     </Grid>
 </Window>
