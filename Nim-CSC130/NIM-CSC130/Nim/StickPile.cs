@@ -1,3 +1,4 @@
+
 public class StickPile
 {
     public int NumberOfSticks { get; private set; }
