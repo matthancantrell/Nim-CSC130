@@ -39,7 +39,7 @@
                        FontFamily="Rockwell" 
                        FontSize="25" 
                        TextAlignment="Center" 
-                       Foreground="DarkSeaGreen"/>
+                       Foreground="MediumSeaGreen"/>
         </StackPanel>
         <Button
                 Margin="234,18,552,340"/>
