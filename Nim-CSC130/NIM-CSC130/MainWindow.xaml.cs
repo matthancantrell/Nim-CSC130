@@ -16,8 +16,6 @@ namespace NIM_CSC130
     /// </summary>
     public partial class MainWindow : Window
     {
-        WindowGame gameWindow = new WindowGame();
-        MainWindow mainWindow = new MainWindow();
         public MainWindow()
         {
             InitializeComponent();
@@ -25,10 +23,8 @@ namespace NIM_CSC130
 
         private void SwitchWindow(object sender, RoutedEventArgs e)
         {
-
-            if (StartPlayer1Button.IsPressed == true) { gameWindow.txt_TurnDisplay.Text = "Player 1 Turn"; gameWindow.IsPlayerTurn = true; }
-            if (StartPlayer2Button.IsPressed == true) { gameWindow.txt_TurnDisplay.Text = "Player 2 Turn"; gameWindow.IsPlayerTurn = false; }
-           
+            WindowGame gameWindow = new WindowGame();
+            Visibility = Visibility.Hidden;
             gameWindow.Show();
         }
     }

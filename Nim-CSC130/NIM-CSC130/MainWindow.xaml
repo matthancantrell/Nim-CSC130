@@ -12,7 +12,7 @@
                        TextAlignment="Center"
                        FontFamily="Rockwell" 
                        Foreground="White">Game of Nim</TextBlock>
-            <Button x:Name="StartPlayer1Button" 
+            <Button x:Name="StartPlayerButton" 
                     Height="60" 
                     Width="325" 
                     Margin="20" 
@@ -21,8 +21,7 @@
                     FontFamily="Rockwell"
                     Background="LightBlue"
                     BorderBrush="Black"
-                    BorderThickness="3"
-                    Click="SwitchWindow">
+                    BorderThickness="3">
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" 
@@ -30,7 +29,7 @@
                     </Style>
                 </Button.Resources>
             </Button>
-            <Button x:Name="StartPlayer2Button"
+            <Button x:Name="StartComputerButton"
                     Height="60" 
                     Width="325" 
                     Content="Let Player 2 Start"
@@ -38,8 +37,7 @@
                     FontFamily="Rockwell"
                     Background="LightBlue"
                     BorderBrush="Black"
-                    BorderThickness="3"
-                    Click="SwitchWindow">
+                    BorderThickness="3">
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="8"/>
