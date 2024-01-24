@@ -29,7 +29,7 @@
                     </Style>
                 </Button.Resources>
             </Button>
-                    
+
             <TextBlock x:Name="txt_WinnerDisplay" 
                        TextWrapping="Wrap" 
                        Text="Winner: " 
@@ -40,5 +40,54 @@
                        TextAlignment="Center" 
                        Foreground="MediumSeaGreen"/>
         </StackPanel>
+        <Button
+            Width="13"
+            Height="75" Margin="230,39,556,320">
+        </Button>
+        <Button
+            Width="13"
+            Height="75" Margin="230,130,556,229"/>
+        <Button
+            Width="13"
+            Height="75" Margin="264,130,523,229"/>
+        <Button
+            Width="13"
+            Height="75" Margin="198,130,589,229"/>
+        <Button
+            Width="13"
+            Height="75" Margin="230,219,556,140"/>
+        <Button
+            Width="13"
+            Height="75" Margin="264,219,523,140"/>
+        <Button
+            Width="13"
+            Height="75" Margin="198,219,589,140"/>
+        <Button
+            Width="13"
+            Height="75" Margin="165,219,622,140"/>
+        <Button
+            Width="13"
+            Height="75" Margin="299,219,488,140"/>
+        <Button
+            Width="13"
+            Height="75" Margin="230,309,556,50"/>
+        <Button
+            Width="13"
+            Height="75" Margin="264,309,523,50"/>
+        <Button
+            Width="13"
+            Height="75" Margin="198,309,589,50"/>
+        <Button
+            Width="13"
+            Height="75" Margin="165,309,622,50"/>
+        <Button
+            Width="13"
+            Height="75" Margin="299,309,488,50"/>
+        <Button
+            Width="13"
+            Height="75" Margin="134,309,653,50"/>
+        <Button
+            Width="13"
+            Height="75" Margin="332,309,455,50"/>
     </Grid>
 </Window>
