@@ -9,4 +9,16 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Nim\NimGame.cs" />
+    <Compile Remove="Nim\Player.cs" />
+    <Compile Remove="Nim\StickPile.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Nim\NimGame.cs" />
+    <None Include="Nim\Player.cs" />
+    <None Include="Nim\StickPile.cs" />
+  </ItemGroup>
+
 </Project>
