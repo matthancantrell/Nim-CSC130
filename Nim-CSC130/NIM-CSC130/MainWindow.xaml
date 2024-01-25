@@ -21,7 +21,8 @@
                     FontFamily="Rockwell"
                     Background="LightBlue"
                     BorderBrush="Black"
-                    BorderThickness="3">
+                    BorderThickness="3"
+                    Click="SwitchWindow">
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" 

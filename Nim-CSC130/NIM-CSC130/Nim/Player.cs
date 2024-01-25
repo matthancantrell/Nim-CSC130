@@ -1,21 +1,18 @@
-public class Player
+﻿namespace NIM;
+
+public abstract class Player
 {
-    public string Name { get; }
+    public PlayerName Name { get; set; }
+    public bool isTurn { get; set; }
 
-    private int sticksPulled;
-
-    public Player(string name)
-    {
-        Name = name;
-        sticksPulled = 0;
+    public enum PlayerName {
+        P1, P2
     }
 
-    public void AddStick(int sticksAdded)
+    public Player() { }
+    public Player(PlayerName name, bool isTurn)
     {
-        sticksPulled += sticksAdded;
+        this.Name = name;
+        this.isTurn = isTurn;
     }
-
-    public int GetSticksPulled() { return sticksPulled; }
-
-    public void ResetSticksPulled() { sticksPulled = 0; }
 }
