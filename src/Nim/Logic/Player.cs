@@ -2,23 +2,37 @@
 
 public abstract class Player
 {
-    public PlayerName Name { get; set; }
-    public bool isTurn { get; set; }
+    #region Internal Variables and Enums
+
+    #region Playername Name Variable and Methods
+    private PlayerName Name;
+    public PlayerName getName() { return this.Name; }
+    public void setName(PlayerName name) { this.Name = name; }
+    #endregion
+
+    #region Bool isTurn Variable and Methods
+    private bool isTurn;
+    public bool get_isTurn() { return this.isTurn; }
+    public void set_isTurn(bool isTurn) {  this.isTurn = isTurn; }
+    #endregion
     public enum PlayerName { P1, P2 }
 
+    #endregion
+
+    #region Contructors
+
     public Player() { }
+
     public Player(PlayerName playername)
     {
         this.Name = playername;
     }
+
     public Player(PlayerName name, bool isTurn)
     {
-        this.Name = name;
+        setName(name);
         this.isTurn = isTurn;
     }
 
-    public void setTurn(bool isTurn)
-    {
-        this.isTurn = isTurn;
-    }
+    #endregion
 }

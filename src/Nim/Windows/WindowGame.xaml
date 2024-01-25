@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Windows"
         mc:Ignorable="d"
-        Title="WindowGame" Height="450" Width="800" Background="DarkCyan">
+        Title="Nim: Play Game!" Height="450" Width="800" Background="DarkCyan" WindowState="Maximized" WindowStyle="SingleBorderWindow" >
     <Grid>
         <StackPanel Margin="400,70,10,50">
             <TextBlock x:Name="txt_TurnDisplay" 
@@ -14,6 +14,7 @@
                        FontFamily="Rockwell" Height="143" Width="246" FontSize="35"
                        TextAlignment="Center"
                        Foreground="White"/>
+            
             <Button x:Name="btn_EndTurn" 
                     Content="End Turn" 
                     Height="55"
@@ -22,14 +23,14 @@
                     BorderBrush="Black" 
                     BorderThickness="3"
                     FontFamily="Rockwell" 
-                    FontSize="20" Click="OnEndTurn">
+                    FontSize="20">
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="8"/>
                     </Style>
                 </Button.Resources>
             </Button>
-
+            
             <TextBlock x:Name="txt_WinnerDisplay" 
                        TextWrapping="Wrap" 
                        Text="Winner: " 
@@ -40,54 +41,109 @@
                        TextAlignment="Center" 
                        Foreground="MediumSeaGreen"/>
         </StackPanel>
+        
+        <!-- User Buttons: Start-->
+        <!-- Row One -->
         <Button
+            x:Name="r1_s1"
             Width="13"
-            Height="75" Margin="230,39,556,320">
-        </Button>
+            Height="75" 
+            Margin="230,39,556,320" 
+            Click="Button_Click" />
+
+        <!-- Row Two -->
         <Button
+            x:Name="r2_s1"
             Width="13"
-            Height="75" Margin="230,130,556,229"/>
+            Height="75" 
+            Margin="198,130,589,229"
+            Click="Button_Click" />
         <Button
+            x:Name="r2_s2"
             Width="13"
-            Height="75" Margin="264,130,523,229"/>
+            Height="75"
+            Margin="230,130,556,229"
+            Click="Button_Click" />
         <Button
+            x:Name="r2_s3"
             Width="13"
-            Height="75" Margin="198,130,589,229"/>
+            Height="75"
+            Margin="264,130,523,229"
+            Click="Button_Click" />
+        <!-- Row Three -->
         <Button
+            x:Name="r3_s1"
             Width="13"
-            Height="75" Margin="230,219,556,140"/>
+            Height="75"
+            Margin="165,219,622,140"
+            Click="Button_Click" />
         <Button
+            x:Name="r3_s2"
             Width="13"
-            Height="75" Margin="264,219,523,140"/>
+            Height="75"
+            Margin="198,219,589,140"
+            Click="Button_Click" />
         <Button
+            x:Name="r3_s3"
             Width="13"
-            Height="75" Margin="198,219,589,140"/>
+            Height="75"
+            Margin="230,219,556,140"
+            Click="Button_Click" />
         <Button
+            x:Name="r3_s4"
             Width="13"
-            Height="75" Margin="165,219,622,140"/>
+            Height="75"
+            Margin="264,219,523,140"
+            Click="Button_Click" />
         <Button
+            x:Name="r3_s5"
             Width="13"
-            Height="75" Margin="299,219,488,140"/>
+            Height="75"
+            Margin="299,219,488,140"
+            Click="Button_Click" />
+        <!-- Row Four -->
         <Button
+            x:Name="r4_s1"
             Width="13"
-            Height="75" Margin="230,309,556,50"/>
+            Height="75" 
+            Margin="134,309,653,50"
+            Click="Button_Click" />
         <Button
+            x:Name="r4_s2"
             Width="13"
-            Height="75" Margin="264,309,523,50"/>
+            Height="75"
+            Margin="165,309,622,50"
+            Click="Button_Click" />
         <Button
+            x:Name="r4_s3"
             Width="13"
-            Height="75" Margin="198,309,589,50"/>
+            Height="75"
+            Margin="198,309,589,50"
+            Click="Button_Click" />
         <Button
+            x:Name="r4_s4"
             Width="13"
-            Height="75" Margin="165,309,622,50"/>
+            Height="75"
+            Margin="230,309,556,50"
+            Click="Button_Click" />
         <Button
+            x:Name="r4_s5"
             Width="13"
-            Height="75" Margin="299,309,488,50"/>
+            Height="75"
+            Margin="264,309,523,50"
+            Click="Button_Click" />
         <Button
+            x:Name="r4_s6"
             Width="13"
-            Height="75" Margin="134,309,653,50"/>
+            Height="75"
+            Margin="299,309,488,50"
+            Click="Button_Click" />
         <Button
+            x:Name="r4_s7"
             Width="13"
-            Height="75" Margin="332,309,455,50"/>
+            Height="75"
+            Margin="332,309,455,50"
+            Click="Button_Click" />
+        <!-- User Buttons: End -->
     </Grid>
 </Window>

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Windows"
         mc:Ignorable="d"
-        Title="ChooseFirstWindow" Height="450" Width="800" Background="DarkCyan">
+        Title="Nim: Who goes first?" Height="450" Width="800" Background="DarkCyan">
     <Grid>
         <Label
             Content="Who Goes First?"
@@ -16,7 +16,7 @@
             FontFamily="Rockwell"
             Foreground="White" />
 
-        <Button x:Name="StartButton" 
+        <Button x:Name="PlayerTwo" 
         Height="60" 
         Width="324" 
         Content="Player Two" 
@@ -25,7 +25,7 @@
         Background="LightBlue"
         BorderBrush="Black"
         BorderThickness="3"
-        Click="PlayerOneFirst" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,305,0,0">
+        Click="PlayerTwoFirst" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,305,0,0">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" 
@@ -33,7 +33,7 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Button x:Name="Button" 
+        <Button x:Name="PlayerOne" 
         Height="60" 
         Width="324" 
         Content="Player One" 
@@ -42,7 +42,7 @@
         Background="LightBlue"
         BorderBrush="Black"
         BorderThickness="3"
-        Click="PlayerTwoFirst" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,197,0,0">
+        Click="PlayerOneFirst" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,197,0,0">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" 

@@ -8,7 +8,10 @@ namespace NIM
 {
     public class Human_Player : Player
     {
-        Human_Player() : base() { }
-        Human_Player(PlayerName name, bool isTurn) : base(name, isTurn) { }
+        public Human_Player() : base() { }
+
+        public Human_Player(PlayerName name) : base(name) { }
+
+        public Human_Player(PlayerName name, bool isTurn) : base(name, isTurn) { }
     }
 }

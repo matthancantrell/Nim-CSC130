@@ -46,7 +46,7 @@ namespace Windows
 
         private void PlayerTwoFirst(object sender, RoutedEventArgs e)
         {
-            WindowGame game = new WindowGame();
+            WindowGame game = new WindowGame(opponent, First.P2);
             game.Show();
             this.Close();
         }

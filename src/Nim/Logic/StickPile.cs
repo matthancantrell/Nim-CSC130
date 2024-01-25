@@ -1,3 +1,4 @@
+﻿namespace NIM;
 
 public class StickPile
 {

@@ -9,7 +9,10 @@ namespace NIM
 {
     public class AI_Player: Player
     {
-        AI_Player(): base() { }
-        AI_Player(PlayerName name, bool isTurn): base(name, isTurn) { }
+        public AI_Player(): base() { }
+
+        public AI_Player(PlayerName name): base(name) { }
+
+        public AI_Player(PlayerName name, bool isTurn): base(name, isTurn) { }
     }
 }
