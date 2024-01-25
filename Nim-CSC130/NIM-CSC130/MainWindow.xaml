@@ -5,43 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NIM_CSC130"
         mc:Ignorable="d"
-        Title="MainWindow" Height="550" Width="800" Background="DarkCyan">
+        Title="Nim" Height="550" Width="800" Background="DarkCyan">
     <Grid>
         <StackPanel Margin="150,164,150,83">
-            <TextBlock FontSize="35" 
+            <TextBlock x:Name="title_text" FontSize="35" 
                        TextAlignment="Center"
                        FontFamily="Rockwell" 
-                       Foreground="White">Game of Nim</TextBlock>
-            <Button x:Name="StartPlayerButton" 
+                       Foreground="White" Text="Nim"/>
+            <Button x:Name="StartButton" 
                     Height="60" 
-                    Width="325" 
-                    Margin="20" 
-                    Content="Let me start" 
+                    Width="324" 
+                    Content="Play!" 
                     FontSize="25" 
                     FontFamily="Rockwell"
                     Background="LightBlue"
                     BorderBrush="Black"
                     BorderThickness="3"
-                    Click="SwitchWindow">
+                    Click="SwitchWindow" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,100,0,0">
                 <Button.Resources>
-                    <Style TargetType="Border">
+                    <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" 
                                 Value="8"/>
-                    </Style>
-                </Button.Resources>
-            </Button>
-            <Button x:Name="StartComputerButton"
-                    Height="60" 
-                    Width="325" 
-                    Content="Let Player 2 Start"
-                    FontSize="25" 
-                    FontFamily="Rockwell"
-                    Background="LightBlue"
-                    BorderBrush="Black"
-                    BorderThickness="3">
-                <Button.Resources>
-                    <Style TargetType="Border">
-                        <Setter Property="CornerRadius" Value="8"/>
                     </Style>
                 </Button.Resources>
             </Button>

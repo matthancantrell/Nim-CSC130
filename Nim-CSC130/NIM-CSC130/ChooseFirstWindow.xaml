@@ -7,6 +7,48 @@
         mc:Ignorable="d"
         Title="ChooseFirstWindow" Height="450" Width="800" Background="DarkCyan">
     <Grid>
-        
+        <Label
+            Content="Who Goes First?"
+            HorizontalAlignment="Center"
+            Margin="0,109,0,0"
+            VerticalAlignment="Top"
+            FontSize="35"
+            FontFamily="Rockwell"
+            Foreground="White" />
+
+        <Button x:Name="StartButton" 
+        Height="60" 
+        Width="324" 
+        Content="Player Two" 
+        FontSize="25" 
+        FontFamily="Rockwell"
+        Background="LightBlue"
+        BorderBrush="Black"
+        BorderThickness="3"
+        Click="PlayerOneFirst" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,305,0,0">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" 
+                    Value="8"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="Button" 
+        Height="60" 
+        Width="324" 
+        Content="Player One" 
+        FontSize="25" 
+        FontFamily="Rockwell"
+        Background="LightBlue"
+        BorderBrush="Black"
+        BorderThickness="3"
+        Click="PlayerTwoFirst" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,197,0,0">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" 
+                    Value="8"/>
+                </Style>
+            </Button.Resources>
+        </Button>
     </Grid>
 </Window>

@@ -23,9 +23,9 @@ namespace NIM_CSC130
 
         private void SwitchWindow(object sender, RoutedEventArgs e)
         {
-            WindowGame gameWindow = new WindowGame();
-            Visibility = Visibility.Hidden;
-            gameWindow.Show();
+            ChooseOpponentWindow chooseOpponent = new ChooseOpponentWindow(); // Makes An Intstance of ChooseOpponentWindow
+            chooseOpponent.Show(); // Opens ChooseOpponentWindow So User Can Select What Type Of Opponent They Will Play Against
+            this.Close(); // Closes This Window To Hide It And Save Memory
         }
     }
 }
