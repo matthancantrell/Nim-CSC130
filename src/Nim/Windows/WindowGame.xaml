@@ -23,7 +23,7 @@
                     BorderBrush="Black" 
                     BorderThickness="3"
                     FontFamily="Rockwell" 
-                    FontSize="20">
+                    FontSize="20" Click="EndTurn_Click">
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="8"/>
@@ -48,7 +48,8 @@
             x:Name="r1_s1"
             Width="13"
             Height="75" 
-            Margin="230,39,556,320" 
+            Margin="230,39,556,320"
+            Background="White"
             Click="Button_Click" />
 
         <!-- Row Two -->
@@ -57,18 +58,21 @@
             Width="13"
             Height="75" 
             Margin="198,130,589,229"
+            Background="White"
             Click="Button_Click" />
         <Button
             x:Name="r2_s2"
             Width="13"
             Height="75"
             Margin="230,130,556,229"
+            Background="White"
             Click="Button_Click" />
         <Button
             x:Name="r2_s3"
             Width="13"
             Height="75"
             Margin="264,130,523,229"
+            Background="White"
             Click="Button_Click" />
         <!-- Row Three -->
         <Button
@@ -76,30 +80,35 @@
             Width="13"
             Height="75"
             Margin="165,219,622,140"
+            Background="White"
             Click="Button_Click" />
         <Button
             x:Name="r3_s2"
             Width="13"
             Height="75"
             Margin="198,219,589,140"
+            Background="White"
             Click="Button_Click" />
         <Button
             x:Name="r3_s3"
             Width="13"
             Height="75"
             Margin="230,219,556,140"
+            Background="White"
             Click="Button_Click" />
         <Button
             x:Name="r3_s4"
             Width="13"
             Height="75"
             Margin="264,219,523,140"
+            Background="White"
             Click="Button_Click" />
         <Button
             x:Name="r3_s5"
             Width="13"
             Height="75"
             Margin="299,219,488,140"
+            Background="White"
             Click="Button_Click" />
         <!-- Row Four -->
         <Button
@@ -107,43 +116,60 @@
             Width="13"
             Height="75" 
             Margin="134,309,653,50"
+            Background="White"
             Click="Button_Click" />
         <Button
             x:Name="r4_s2"
             Width="13"
             Height="75"
             Margin="165,309,622,50"
+            Background="White"
             Click="Button_Click" />
         <Button
             x:Name="r4_s3"
             Width="13"
             Height="75"
             Margin="198,309,589,50"
+            Background="White"
             Click="Button_Click" />
         <Button
             x:Name="r4_s4"
             Width="13"
             Height="75"
             Margin="230,309,556,50"
+            Background="White"
             Click="Button_Click" />
         <Button
             x:Name="r4_s5"
             Width="13"
             Height="75"
             Margin="264,309,523,50"
+            Background="White"
             Click="Button_Click" />
         <Button
             x:Name="r4_s6"
             Width="13"
             Height="75"
             Margin="299,309,488,50"
+            Background="White"
             Click="Button_Click" />
         <Button
             x:Name="r4_s7"
             Width="13"
             Height="75"
             Margin="332,309,455,50"
+            Background="White"
             Click="Button_Click" />
+        <Button
+            x:Name="playagain"
+            Content="Play Again" 
+            Height="55"
+            Width="140"
+            Background="LightBlue"
+            BorderBrush="Black" 
+            BorderThickness="3"
+            FontFamily="Rockwell" 
+            FontSize="20" Click="PlayAgain" Margin="525,379,135,0" />
         <!-- User Buttons: End -->
     </Grid>
 </Window>

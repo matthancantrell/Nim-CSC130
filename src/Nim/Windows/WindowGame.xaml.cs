@@ -1,6 +1,7 @@
 ﻿using NIM;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace Windows
 {
@@ -12,8 +13,13 @@ namespace Windows
         #region Internal Variables
 
         NIM.NimGame game;
-        Object[] stickpiles;
+        Button[][] stickpiles;
         bool isOver = false;
+        List<Button> selectedButtons = new List<Button>();
+
+        bool isFirstClick = false;
+        int currentRow = 0;
+        int prevRow = 0;
 
         #region Button Arrays
         Button[] rowOne;
@@ -51,13 +57,32 @@ namespace Windows
             #endregion
 
             txt_WinnerDisplay.Visibility = Visibility.Hidden;
-            txt_TurnDisplay.Text = getTurnText();
+            updateTurnText();
+
+            PlayGame();
+            playagain.Visibility = Visibility.Hidden;
+        }
+
+        private void PlayGame()
+        {
+            if (isOver == false)
+            {
+                if (game.getCurrentPlayer().GetType().Name == "AI_Player")
+                {
+                    AI_TakeTurn();
+                    ClickEndTurn();
+                }
+            }
+        }
+
+        private void ClickEndTurn()
+        {
+            RoutedEventArgs newEventArgs = new RoutedEventArgs(Button.ClickEvent);
+            btn_EndTurn.RaiseEvent(newEventArgs);
         }
 
         public void InitializeArrays()
         {
-            stickpiles = new Object[4];
-
             #region Initialize and Populate Button Arrays
             #region Row One
             rowOne = new Button[1];
@@ -69,6 +94,7 @@ namespace Windows
 
             rowTwo[0] = r2_s1;
             rowTwo[1] = r2_s2;
+            rowTwo[2] = r2_s3;
             #endregion
             #region Row Three
             rowThree = new Button[5];
@@ -91,6 +117,8 @@ namespace Windows
             rowFour[6] = r4_s7;
             #endregion
             #endregion
+
+            stickpiles = new Button[][] { rowOne, rowTwo, rowThree, rowFour };
 
             #region Populate Object Array
             stickpiles[0] = rowOne;
@@ -122,9 +150,9 @@ namespace Windows
             
         }*/
 
-        private void PlayGame()
+        private void updateTurnText()
         {
-
+            txt_TurnDisplay.Text = getTurnText();
         }
 
         private string getTurnText()
@@ -149,15 +177,158 @@ namespace Windows
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Button btn = (Button)sender;
+            btn.Background = Brushes.LawnGreen;
+
+            if (!isFirstClick) { prevRow = currentRow; }
+            currentRow = getRowOfButton(btn);
+
+            if (currentRow != prevRow)
+            {
+                foreach (Button button in selectedButtons)
+                {
+                    button.Background = Brushes.White;
+                    button.Content = null;
+                }
+                selectedButtons.Clear();
+            }
+
+            selectedButtons.Add(btn);
+            btn.Content = ' ';
+        }
+
+        private int getRowOfButton(Button btn)
+        {
             int i = 0;
             foreach (Object[] item in stickpiles)
             {
                 i++;
                 if (item.Contains(btn))
                 {
-                    txt_TurnDisplay.Text = "Button in row: " + i;
+                    break;
                 }
             }
+
+            return i;
+        }
+
+        private bool selectedButtonIsOnCurrentRow(Button btn)
+        {
+            return getRowOfButton(btn) == currentRow;
+        }
+
+        private void AI_TakeTurn()
+        {
+            Random rand = new Random();
+            int rowToTakeFrom = rand.Next(1, 5);
+
+            int potentialSticksToTake = 0;
+
+            for (int i = 0; i < stickpiles[rowToTakeFrom - 1].Length; i++)
+            {
+                if (stickpiles[rowToTakeFrom - 1][i].Content != " ")
+                {
+                    potentialSticksToTake++;
+                }
+            }
+
+            int sticksToTake = rand.Next(1, potentialSticksToTake + 1);
+
+            for (int i = 0; i < sticksToTake; i++)
+            {
+                int button = -1;
+                while (button == -1)
+                {
+                    int x = rand.Next(1, stickpiles[rowToTakeFrom - 1].Count()) - 1;
+                    if (stickpiles[rowToTakeFrom - 1][x].Content == null)
+                    {
+                        Button btn = stickpiles[rowToTakeFrom - 1][x];
+                        btn.Content = " ";
+                        selectedButtons.Add(btn);
+                        button = 1;
+                    }
+                }
+
+            }
+        }
+
+        public bool isGameOver()
+        {
+            bool over = false;
+            int x = 0;
+
+            foreach (Button[] item in stickpiles)
+            {
+                foreach (Button btn in item)
+                {
+                    if (btn.Content == null)
+                    {
+                        over = false;
+                    }
+                    else
+                    {
+                        over = true;
+                        x++;
+                    }
+                }
+            }
+
+            return x >= 16;
+        }
+
+        public void GameOver()
+        {
+            btn_EndTurn.Visibility = Visibility.Hidden;
+
+            txt_TurnDisplay.Visibility = Visibility.Hidden;
+            txt_WinnerDisplay.Visibility = Visibility.Visible;
+
+            switch (game.getCurrentPlayer().getName())
+            {
+                case Player.PlayerName.P1:
+                    {
+                        txt_WinnerDisplay.Text = "Player One Wins!";
+                        break;
+                    }
+                case Player.PlayerName.P2:
+                    {
+                        txt_WinnerDisplay.Text = "Player Two Wins!";
+                        break;
+                    }
+            }
+
+            playagain.Visibility = Visibility.Visible;
+        }
+
+        private void EndTurn_Click(object sender, RoutedEventArgs e)
+        {
+            if(selectedButtons.Count > 0)
+            {
+                foreach(Button button in selectedButtons)
+                {
+                    button.Visibility = Visibility.Hidden;
+                }
+                game.switchCurrentPlayer();
+                updateTurnText();
+                selectedButtons.Clear();
+            }
+
+            isOver = isGameOver();
+            if (isOver)
+            {
+                GameOver();
+            }
+            else if (game.getCurrentPlayer().GetType().Name == "AI_Player")
+            {
+                AI_TakeTurn();
+                ClickEndTurn();
+            }
+        }
+
+        private void PlayAgain(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
         }
     }
 }

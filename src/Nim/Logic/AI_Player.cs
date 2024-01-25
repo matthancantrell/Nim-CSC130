@@ -14,5 +14,7 @@ namespace NIM
         public AI_Player(PlayerName name): base(name) { }
 
         public AI_Player(PlayerName name, bool isTurn): base(name, isTurn) { }
+
+        public override void TakeTurn() { }
     }
 }

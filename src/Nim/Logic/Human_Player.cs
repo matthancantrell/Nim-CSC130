@@ -13,5 +13,7 @@ namespace NIM
         public Human_Player(PlayerName name) : base(name) { }
 
         public Human_Player(PlayerName name, bool isTurn) : base(name, isTurn) { }
+
+        public override void TakeTurn() { }
     }
 }

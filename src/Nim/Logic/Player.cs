@@ -34,5 +34,7 @@ public abstract class Player
         this.isTurn = isTurn;
     }
 
+    public virtual void TakeTurn() { }
+
     #endregion
 }

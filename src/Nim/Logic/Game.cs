@@ -3,12 +3,34 @@ namespace NIM;
 
 public class NimGame
 {
-    private StickPile[] stickPiles = new StickPile[4];
+    // private StickPile[] stickPiles = new StickPile[4];
 
     #region CurrentPlayer Variable and Methods
     private Player currentPlayer;
     public Player getCurrentPlayer() { return this.currentPlayer; }
     public void setCurrentPlayer(Player player) { this.currentPlayer = player; }
+    public void switchCurrentPlayer()
+    {
+        switch(this.currentPlayer.getName())
+        {
+            case Player.PlayerName.P1:
+                {
+                    currentPlayer = playerTwo;
+
+                    playerOne.set_isTurn(false);
+                    playerTwo.set_isTurn(true);
+                    break;
+                }
+            case Player.PlayerName.P2:
+                {
+                    currentPlayer = playerOne;
+
+                    playerOne.set_isTurn(true);
+                    playerTwo.set_isTurn(false);
+                    break;
+                }
+        }
+    }
     #endregion
 
     #region PlayerOne Variable and Methods
@@ -25,12 +47,12 @@ public class NimGame
 
     public NimGame()
     {
-        InitiatePiles();
+        //InitiatePiles();
     }
 
     public NimGame(Player P1, Player P2, First first)
     {
-        InitiatePiles();
+        //InitiatePiles();
 
         playerOne = P1;
         playerTwo = P2;
@@ -56,22 +78,22 @@ public class NimGame
         }
     }
 
-    private void InitiatePiles()
+/*    private void InitiatePiles()
     {
         stickPiles[0] = new StickPile(1);
         stickPiles[1] = new StickPile(3);
         stickPiles[2] = new StickPile(5);
         stickPiles[3] = new StickPile(7);
-    }
+    }*/
 
-    public bool IsGameOver()
+/*    public bool IsGameOver()
     {
         if (stickPiles[0].IsEmpty() && stickPiles[1].IsEmpty() && stickPiles[2].IsEmpty() && stickPiles[3].IsEmpty())
         {
             return true;
         }
         return false;
-    }
+    }*/
 
     //starting with 1 for the pile with just 1 stick and ending with 4 for the pile with 7 sticks!
 /*    public void PlayTurn(int pileNum, int stickNum)

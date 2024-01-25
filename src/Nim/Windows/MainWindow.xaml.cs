@@ -23,9 +23,15 @@ namespace Windows
 
         private void SwitchWindow(object sender, RoutedEventArgs e)
         {
-            ChooseOpponentWindow chooseOpponent = new ChooseOpponentWindow(); // Makes An Intstance of ChooseOpponentWindow
-            chooseOpponent.Show(); // Opens ChooseOpponentWindow So User Can Select What Type Of Opponent They Will Play Against
-            this.Close(); // Closes This Window To Hide It And Save Memory
+            /*            ChooseOpponentWindow chooseOpponent = new ChooseOpponentWindow(); // Makes An Intstance of ChooseOpponentWindow
+                        chooseOpponent.Show(); // Opens ChooseOpponentWindow So User Can Select What Type Of Opponent They Will Play Against
+                        this.Close(); // Closes This Window To Hide It And Save Memory*/
+
+            // Above code will be commented until AI works
+
+            ChooseFirstWindow chooseFirstWindow = new ChooseFirstWindow(Opponent.Human);
+            chooseFirstWindow.Show();
+            this.Close();
         }
     }
 }
