@@ -9,7 +9,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace NIM_CSC130
+namespace Windows
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

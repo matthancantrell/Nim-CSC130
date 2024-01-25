@@ -13,12 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using NIM;
 
-namespace NIM_CSC130
+namespace Windows
 {
     /// <summary>
     /// Interaction logic for ChooseFirstWindow.xaml
     /// </summary>
     /// 
+
+    public enum First { P1, P2 }
 
     public partial class ChooseFirstWindow : Window
     {
@@ -37,8 +39,7 @@ namespace NIM_CSC130
 
         private void PlayerOneFirst(object sender, RoutedEventArgs e)
         {
-            WindowGame game = new WindowGame();
-            Console.WriteLine("<-- GAME -->");
+            WindowGame game = new WindowGame(opponent, First.P1);
             game.Show();
             this.Close();
         }

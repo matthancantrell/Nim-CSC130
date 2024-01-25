@@ -10,13 +10,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Nim\NimGame.cs" />
-    <Compile Remove="Nim\StickPile.cs" />
+    <Compile Remove="Logic\NimGame.cs" />
+    <Compile Remove="Logic\StickPile.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Nim\NimGame.cs" />
-    <None Include="Nim\StickPile.cs" />
+    <None Include="Logic\NimGame.cs" />
+    <None Include="Logic\StickPile.cs" />
   </ItemGroup>
 
 </Project>

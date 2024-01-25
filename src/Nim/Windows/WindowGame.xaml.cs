@@ -1,18 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using System.Windows;
 
-namespace NIM_CSC130
+namespace Windows
 {
     /// <summary>
     /// Interaction logic for WindowGame.xaml
@@ -22,6 +10,11 @@ namespace NIM_CSC130
         private bool isPlayer = false;
        
         public WindowGame()
+        {
+            InitializeComponent();
+        }
+
+        public WindowGame(Opponent opponent, First first)
         {
             InitializeComponent();
         }

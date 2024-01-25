@@ -1,12 +1,9 @@
 ﻿using System.Windows;
 using NIM;
 
-namespace NIM_CSC130
+namespace Windows
 {
-    public enum Opponent
-    {
-        Human, Computer
-    }
+    public enum Opponent { Human, Computer }
 
     public partial class ChooseOpponentWindow : Window
     {
